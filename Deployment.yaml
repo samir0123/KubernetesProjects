@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: samir-deployment
+  labels:
+    app: samirlabs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: samirlabs
+  template:
+    metadata:
+      labels:
+        app: samirlabs
+    spec:
+      containers:
+      - name: samirlabs
+        image: samir710413/pipeline-test
+        ports:
+        - containerPort: 80
